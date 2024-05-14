@@ -25,6 +25,13 @@ It is mostly base on my work for Ishid-O-Matic Reborn game so it might be a bit 
 * config file and related data ready to use
 * no additional annoying, hard to set-up and painful plug-in or such
 
+# Requirements
+
+* a fair knowledge of the Godot engine, fundamentals, how it works and how to use it,
+* some experience in GDScript language,
+* how to define and use signals from GDScript,
+* UI/Containers and themes knowledge
+
 # TODO
 
 * more 2D options: screen resolution, full screen/windowed mode, custom cursor
