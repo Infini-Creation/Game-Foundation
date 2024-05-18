@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://f4tvja21vgfd"]
+
+[ext_resource type="Script" path="res://scripts/about.gd" id="1_wtqih"]
+
+[node name="About" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wtqih")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 158.0
+offset_bottom = 23.0
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "ABOUTBUTTON"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

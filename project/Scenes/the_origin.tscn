@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://r21iw4yahy6d"]
+
+[ext_resource type="Script" path="res://scripts/the_origin.gd" id="1_nruet"]
+
+[node name="TheOrigin" type="Node"]
+script = ExtResource("1_nruet")
+currentMusic = null
+
+[node name="dummy" type="Node" parent="."]
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="SoundEffectPlayer" type="AudioStreamPlayer" parent="."]

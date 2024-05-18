@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=3 uid="uid://b8tmgbwd1rkww"]
+
+[ext_resource type="Script" path="res://scripts/buttons.gd" id="1_wxcm6"]
+[ext_resource type="PackedScene" uid="uid://da1ll6cdatj6v" path="res://Scenes/Main Menu/OnePlayer.tscn" id="2_1773q"]
+[ext_resource type="PackedScene" uid="uid://dpatmgi6u21ul" path="res://Scenes/Main Menu/TwoPlayer.tscn" id="3_ihyi6"]
+[ext_resource type="PackedScene" uid="uid://d3g8j43v7inut" path="res://Scenes/Main Menu/HighScores.tscn" id="4_btkp4"]
+[ext_resource type="PackedScene" uid="uid://pjrq81o6xymy" path="res://Scenes/Main Menu/Settings.tscn" id="5_43srq"]
+[ext_resource type="PackedScene" uid="uid://f4tvja21vgfd" path="res://Scenes/Main Menu/About.tscn" id="6_qtpqq"]
+[ext_resource type="PackedScene" uid="uid://hlgnu51muwwm" path="res://Scenes/Main Menu/Help.tscn" id="7_uee00"]
+[ext_resource type="PackedScene" uid="uid://b3vw37ei82ewc" path="res://Scenes/Main Menu/Quit.tscn" id="8_66whi"]
+
+[node name="Buttons" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_wxcm6")
+
+[node name="ButtonGroup" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 48
+
+[node name="ButtonsRow1" type="HBoxContainer" parent="ButtonGroup"]
+layout_mode = 2
+theme_override_constants/separation = 256
+
+[node name="OnePlayer" parent="ButtonGroup/ButtonsRow1" instance=ExtResource("2_1773q")]
+layout_mode = 2
+
+[node name="TwoPlayer" parent="ButtonGroup/ButtonsRow1" instance=ExtResource("3_ihyi6")]
+layout_mode = 2
+
+[node name="ButtonsRow2" type="HBoxContainer" parent="ButtonGroup"]
+layout_mode = 2
+theme_override_constants/separation = 256
+
+[node name="HighScores" parent="ButtonGroup/ButtonsRow2" instance=ExtResource("4_btkp4")]
+layout_mode = 2
+
+[node name="Settings" parent="ButtonGroup/ButtonsRow2" instance=ExtResource("5_43srq")]
+layout_mode = 2
+
+[node name="ButtonsRow3" type="HBoxContainer" parent="ButtonGroup"]
+layout_mode = 2
+theme_override_constants/separation = 256
+
+[node name="About" parent="ButtonGroup/ButtonsRow3" instance=ExtResource("6_qtpqq")]
+layout_mode = 2
+
+[node name="Help" parent="ButtonGroup/ButtonsRow3" instance=ExtResource("7_uee00")]
+layout_mode = 2
+
+[node name="ButtonsRow4" type="HBoxContainer" parent="ButtonGroup"]
+layout_mode = 2
+
+[node name="Quit" parent="ButtonGroup/ButtonsRow4" instance=ExtResource("8_66whi")]
+layout_mode = 2
+
+[connection signal="oneplayer_game_requested" from="ButtonGroup/ButtonsRow1/OnePlayer" to="." method="_on_one_player_oneplayer_game_requested"]
+[connection signal="twoplayer_game_requested" from="ButtonGroup/ButtonsRow1/TwoPlayer" to="." method="_on_two_player_twoplayer_game_requested"]
+[connection signal="settings_requested" from="ButtonGroup/ButtonsRow2/Settings" to="." method="_on_settings_settings_requested"]
+[connection signal="about_requested" from="ButtonGroup/ButtonsRow3/About" to="." method="_on_about_about_requested"]
+[connection signal="help_requested" from="ButtonGroup/ButtonsRow3/Help" to="." method="_on_help_help_requested"]
+[connection signal="quit_requested" from="ButtonGroup/ButtonsRow4/Quit" to="." method="_on_quit_quit_requested"]

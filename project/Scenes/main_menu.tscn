@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1jijhcvsy5x3"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_7j1sr"]
+[ext_resource type="PackedScene" uid="uid://cys0gt4pn26i2" path="res://Scenes/Panels/About.tscn" id="2_02rdv"]
+[ext_resource type="PackedScene" uid="uid://bqdxkav31a5yl" path="res://Scenes/Panels/Help.tscn" id="3_s8l2n"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7j1sr")
+
+[node name="BackgroundTexture" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(1152, 648)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DummyLabel" type="Label" parent="CenterContainer"]
+layout_mode = 2
+text = "Your Scene HERE !
+(this should NOT 
+be visible !)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AboutPanel" parent="." instance=ExtResource("2_02rdv")]
+visible = false
+layout_mode = 1
+
+[node name="HelpPanel" parent="." instance=ExtResource("3_s8l2n")]
+visible = false
+layout_mode = 1
+
+[connection signal="panel_closed" from="AboutPanel" to="." method="_on_about_panel_panel_closed"]
+[connection signal="panel_closed" from="HelpPanel" to="." method="_on_help_panel_panel_closed"]
