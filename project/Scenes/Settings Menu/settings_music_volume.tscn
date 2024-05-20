@@ -1,0 +1,60 @@
+[gd_scene load_steps=2 format=3 uid="uid://cv8mda033d0a3"]
+
+[ext_resource type="Script" path="res://scripts/Settings/settings_music_volume.gd" id="1_asvs0"]
+
+[node name="SettingsMusicVolume" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -802.0
+offset_bottom = -608.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_asvs0")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.117647, 0.2, 1, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -19.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+toggle_mode = true
+action_mode = 0
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer"]
+custom_minimum_size = Vector2(255, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+value = 25.0
+rounded = true
+
+[node name="VolumeValue" type="Label" parent="HBoxContainer"]
+texture_filter = 2
+layout_mode = 2
+text = "100"
+horizontal_alignment = 1
+
+[connection signal="toggled" from="HBoxContainer/TextureButton" to="." method="_on_texture_button_toggled"]
+[connection signal="value_changed" from="HBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
