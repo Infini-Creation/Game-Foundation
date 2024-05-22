@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://3jb4hgse3f0s"]
+[gd_scene load_steps=4 format=3 uid="uid://3jb4hgse3f0s"]
 
 [ext_resource type="Script" path="res://scripts/Settings/settings_soundeffects_volume.gd" id="1_tcnk1"]
+[ext_resource type="Texture2D" uid="uid://dbgbsel13d8f4" path="res://Arts/Menu/Settings Menu/audioOn.png" id="2_3x0tc"]
+[ext_resource type="Texture2D" uid="uid://do0nuncjx16q8" path="res://Arts/Menu/Settings Menu/audioOff.png" id="3_gs15s"]
 
 [node name="SettingssndEffectsVolume" type="Control"]
 layout_mode = 3
@@ -14,6 +16,8 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_tcnk1")
+audio_enabled_icon = ExtResource("2_3x0tc")
+audio_disabled_icon = ExtResource("3_gs15s")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
